@@ -29,3 +29,19 @@ document.addEventListener("DOMContentLoaded", function() {
         chatContent.scrollTop = chatContent.scrollHeight;
     }
 });
+
+const modal = document.getElementById("notification-modal");
+const closeModal = document.getElementsByClassName("close")[0];
+
+// Exibe o modal após 3 segundos
+setTimeout(() => modal.style.display = "block", 3000);
+
+// Fecha o modal ao clicar no "x"
+closeModal.onclick = () => modal.style.display = "none";
+
+// Fecha o modal quando clicar fora dele
+window.onclick = (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
